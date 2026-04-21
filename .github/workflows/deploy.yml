@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE: /没有湖泊是蓝色的-WebVR项目建档/
+          VITE_BASE: /no-lake-is-blue/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

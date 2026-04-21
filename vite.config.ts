@@ -3,7 +3,7 @@ import { resolve } from 'path'
 
 // 部署到 GitHub Pages 时取消下面这行的注释，并替换为你的仓库名
 // const BASE = process.env.VITE_BASE || '/'
-const BASE = '/没有湖泊是蓝色的-WebVR项目建档/'
+const BASE = '/no-lake-is-blue/'
 
 export default defineConfig({
   base: BASE,
