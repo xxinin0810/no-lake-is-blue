@@ -520,10 +520,10 @@ export function createScene1(container: HTMLElement) {
         if (fadeEl) {
           fadeEl.style.opacity = '1'
           setTimeout(() => {
-            window.location.href = '/pages/scene-2.html'
+            window.location.href = './pages/scene-2.html'
           }, 1200)
         } else {
-          window.location.href = '/pages/scene-2.html'
+          window.location.href = './pages/scene-2.html'
         }
       }, 1500)
     }

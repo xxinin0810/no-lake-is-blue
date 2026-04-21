@@ -1,14 +1,20 @@
 import * as THREE from 'three'
 
+/** 获取 base path（GitHub Pages 子路径） */
+const BASE = document.querySelector('script[src*="vite/client"]')
+  ? '/'
+  : (document.baseURI.replace(/\/[^/]*\/?$/, '') + '/').replace(location.origin, '') || '/'
+
 /** 场景转场：淡出 → 跳转 */
 export function transitionToScene(url: string, fadeColor = '#000', delay = 1500) {
+  const resolved = url.startsWith('/') ? BASE + url.replace(/^\//, '') : url
   const fadeEl = document.getElementById('scene-fade')
   if (fadeEl) {
     fadeEl.style.background = fadeColor
     fadeEl.style.opacity = '1'
-    setTimeout(() => { window.location.href = url }, 1200)
+    setTimeout(() => { window.location.href = resolved }, 1200)
   } else {
-    setTimeout(() => { window.location.href = url }, delay)
+    setTimeout(() => { window.location.href = resolved }, delay)
   }
 }
 
