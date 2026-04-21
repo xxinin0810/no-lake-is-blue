@@ -103,7 +103,7 @@ export function createScene4(container: HTMLElement) {
   tl.add(13.0, () => showSubtitle('身后，有什么东西在靠近。', 3000))
   tl.add(14.0, () => { shadow.visible = true; controls.disabled = true })
   tl.add(18.0, () => showSubtitle('跑。', 2000))
-  tl.add(22.0, () => transitionToScene('/pages/scene-5.html', 800))
+  tl.add(22.0, () => transitionToScene('/pages/scene-5.html'))
 
   rm.onAnimate((delta, elapsed) => {
     controls.update(delta)
