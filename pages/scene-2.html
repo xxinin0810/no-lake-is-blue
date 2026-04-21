@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>没有湖泊是蓝色的 - 场景二：庄房（梦境一）</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Three.js Canvas 容器 -->
+    <div id="scene-container"></div>
+
+    <!-- 加载画面 -->
+    <div id="loading-screen">
+      <div class="loading-content">
+        <h2>没有湖泊是蓝色的</h2>
+        <p>正在进入梦境……</p>
+        <div class="loading-bar"><div class="loading-bar-fill" id="loading-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- 字幕叠加层 -->
+    <div id="subtitle-overlay">
+      <p id="subtitle-text"></p>
+    </div>
+
+    <!-- 场景淡出层 -->
+    <div id="scene-fade"></div>
+
+    <!-- 桌面端操作提示 -->
+    <div id="controls-hint">
+      <span>WASD 移动</span>
+      <span>鼠标 视角</span>
+    </div>
+  </div>
+
+  <script type="module" src="/src/scenes/scene-2-dream1.ts"></script>
+</body>
+</html>
