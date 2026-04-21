@@ -1,9 +1,16 @@
 import * as THREE from 'three'
 
 /** 获取 base path（GitHub Pages 子路径） */
-const BASE = document.querySelector('script[src*="vite/client"]')
-  ? '/'
-  : (document.baseURI.replace(/\/[^/]*\/?$/, '') + '/').replace(location.origin, '') || '/'
+function getBase(): string {
+  // 开发模式：vite dev server，base 是 '/'
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return '/'
+  // 生产模式：从当前 URL 推导 base
+  const path = window.location.pathname
+  // 如果路径是 /no-lake-is-blue/pages/xxx.html，base 是 /no-lake-is-blue/
+  const match = path.match(/^\/[^\/]+\//)
+  return match ? match[0] : '/'
+}
+const BASE = getBase()
 
 /** 场景转场：淡出 → 跳转 */
 export function transitionToScene(url: string, fadeColor = '#000', delay = 1500) {

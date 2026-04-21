@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { RendererManager } from '../core/renderer'
 import { FPSCameraControls } from '../core/camera-controls'
+import { showSubtitle, transitionToScene } from '../core/scene-helpers'
 
 // ============================================================
 // 场景1：庄房内（现实）—— 黑白世界
@@ -516,15 +517,7 @@ export function createScene1(container: HTMLElement) {
 
       // 1.5秒后淡出并跳转
       setTimeout(() => {
-        const fadeEl = document.getElementById('scene-fade')
-        if (fadeEl) {
-          fadeEl.style.opacity = '1'
-          setTimeout(() => {
-            window.location.href = './pages/scene-2.html'
-          }, 1200)
-        } else {
-          window.location.href = './pages/scene-2.html'
-        }
+        transitionToScene('/pages/scene-2.html')
       }, 1500)
     }
   })
