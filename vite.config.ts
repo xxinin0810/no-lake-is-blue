@@ -6,6 +6,9 @@ const BASE = process.env.VITE_BASE || '/'
 
 export default defineConfig({
   base: BASE,
+  define: {
+    __DEFINES__: JSON.stringify({}),
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
