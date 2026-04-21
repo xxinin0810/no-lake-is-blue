@@ -6,8 +6,20 @@ const BASE = process.env.VITE_BASE || '/'
 
 export default defineConfig({
   base: BASE,
+  // 定义 Vite 内部变量，解决 MPA 模式下 client chunk 引用未定义变量的问题
   define: {
     __DEFINES__: JSON.stringify({}),
+    __BASE__: JSON.stringify(BASE),
+    __SERVER_HOST__: JSON.stringify(''),
+    __WS_TOKEN__: JSON.stringify(''),
+    __HMR_CONFIG_NAME__: JSON.stringify(''),
+    __HMR_BASE__: JSON.stringify(''),
+    __HMR_HOSTNAME__: JSON.stringify(''),
+    __HMR_PORT__: JSON.stringify(''),
+    __HMR_PROTOCOL__: JSON.stringify(''),
+    __HMR_DIRECT_TARGET__: JSON.stringify(false),
+    __HMR_ENABLE_OVERLAY__: JSON.stringify(true),
+    __HMR_TIMEOUT__: JSON.stringify(30000),
   },
   resolve: {
     alias: {
