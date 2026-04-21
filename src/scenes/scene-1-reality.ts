@@ -535,5 +535,6 @@ export function createScene1(container: HTMLElement) {
 // --- 自动初始化 ---
 const container = document.getElementById('scene-container')
 if (container) {
-  createScene1(container)
+  try { createScene1(container) }
+  catch (e) { console.error('Scene 1 failed:', e); document.getElementById('loading-screen')?.classList.add('hidden') }
 }

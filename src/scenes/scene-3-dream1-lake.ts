@@ -172,4 +172,12 @@ export function createScene3(container: HTMLElement) {
 }
 
 const container = document.getElementById('scene-container')
-if (container) createScene3(container)
+if (container) {
+  try {
+    createScene3(container)
+  } catch (e) {
+    console.error('Scene 3 init failed:', e)
+    const loading = document.getElementById('loading-screen')
+    if (loading) loading.classList.add('hidden')
+  }
+}

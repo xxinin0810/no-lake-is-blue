@@ -190,4 +190,7 @@ export function createScene6(container: HTMLElement) {
 }
 
 const container = document.getElementById('scene-container')
-if (container) createScene6(container)
+if (container) {
+  try { createScene6(container) }
+  catch (e) { console.error('Scene 6 failed:', e); document.getElementById('loading-screen')?.classList.add('hidden') }
+}

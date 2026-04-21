@@ -299,5 +299,6 @@ export function createScene2(container: HTMLElement) {
 // --- 自动初始化 ---
 const container = document.getElementById('scene-container')
 if (container) {
-  createScene2(container)
+  try { createScene2(container) }
+  catch (e) { console.error('Scene 2 failed:', e); document.getElementById('loading-screen')?.classList.add('hidden') }
 }

@@ -148,4 +148,7 @@ export function createScene5(container: HTMLElement) {
 }
 
 const container = document.getElementById('scene-container')
-if (container) createScene5(container)
+if (container) {
+  try { createScene5(container) }
+  catch (e) { console.error('Scene 5 failed:', e); document.getElementById('loading-screen')?.classList.add('hidden') }
+}

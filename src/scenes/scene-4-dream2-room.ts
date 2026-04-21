@@ -150,4 +150,7 @@ export function createScene4(container: HTMLElement) {
 }
 
 const container = document.getElementById('scene-container')
-if (container) createScene4(container)
+if (container) {
+  try { createScene4(container) }
+  catch (e) { console.error('Scene 4 failed:', e); document.getElementById('loading-screen')?.classList.add('hidden') }
+}
