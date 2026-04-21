@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
-// 部署到 GitHub Pages 时取消下面这行的注释，并替换为你的仓库名
-// const BASE = process.env.VITE_BASE || '/'
-const BASE = '/no-lake-is-blue/'
+// 部署到 GitHub Pages 时用环境变量 VITE_BASE，开发时默认 '/'
+const BASE = process.env.VITE_BASE || '/'
 
 export default defineConfig({
   base: BASE,
